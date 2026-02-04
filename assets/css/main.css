@@ -592,6 +592,12 @@ a.back-to-top:hover, a.back-to-top:focus {
   margin-bottom: 10px;
 }
 
+@media (max-width: 991px) {
+  .navbar-brand {
+      width: 75%;
+  }
+}
+
 .top-nav-collapse {
   background: #fff;
   z-index: 999999;
