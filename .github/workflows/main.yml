@@ -1,0 +1,25 @@
+on:
+    push:
+        branches:
+            - main
+name: 🚀 Deploy de la web al hacer push en la rama "main"
+jobs:
+    web-deploy:
+        name: 🎉 Deploy
+        runs-on: ubuntu-latest
+        steps:
+            - name: 🚚 Obtener el código
+              uses: actions/checkout@v3
+
+            - name: 📂 Sync ficheros
+              uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+              with:
+                  server: ${{ secrets.ftp_server }}
+                  username: ${{ secrets.ftp_username }}
+                  password: ${{ secrets.ftp_password }}
+                  protocol: ftps
+                  port: 21
+                  server-dir: ${{ secrets.ftp_server_dir }}
+                  exclude: |
+                      **/.git*
+                      **/.git*/**
