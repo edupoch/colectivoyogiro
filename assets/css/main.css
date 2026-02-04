@@ -584,17 +584,18 @@ a.back-to-top:hover, a.back-to-top:focus {
 .navbar-brand {
   position: relative;
   padding: 0px;
+  width: 12%;
 }
 
 .navbar-brand img {
-  width: 30%;
+  width: 100%;
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
 @media (max-width: 991px) {
   .navbar-brand {
-      width: 75%;
+      width: 20%;
   }
 }
 
